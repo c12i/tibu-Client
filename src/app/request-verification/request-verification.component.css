@@ -10,3 +10,20 @@
     background-position-x: 75%;
     height: 94.7vh;
 }
+
+#formParentDiv {
+    display: grid;
+    place-items: center;
+}
+
+form {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
