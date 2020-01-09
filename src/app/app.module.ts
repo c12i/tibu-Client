@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RequestVerificationComponent } from './request-verification/request-verification.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RequestVerificationComponent
   ],
   imports: [
     BrowserModule,
