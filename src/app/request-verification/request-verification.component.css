@@ -19,9 +19,12 @@ nav span, form h4 {
     height: 94vh;
 }
 
+
+
 #formParentDiv {
     display: grid;
     place-items: center;
+    margin-bottom: 20px;
 }
 
 form {
@@ -37,4 +40,21 @@ button {
     margin-right: auto;
     background: #034866;
     border: none;
+}
+
+@media only screen and (max-width: 780px) {
+    form {
+        margin-top: 40px;
+    }
+
+    #banner-img {
+        height: 30vh;
+    }
+
+}
+
+@media only screen and (max-width: 350px) {
+    #banner-img {
+        display: none;
+    }
 }
