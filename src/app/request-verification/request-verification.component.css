@@ -1,0 +1,60 @@
+nav {
+    background-color: #034866;
+}
+
+nav span, form h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.row {
+    margin: 0%; 
+}
+
+#banner-img {
+    background-image: url("../../assets/img/microscope.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: 75%;
+    height: 94vh;
+}
+
+
+
+#formParentDiv {
+    display: grid;
+    place-items: center;
+    margin-bottom: 20px;
+}
+
+form {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+button {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    background: #034866;
+    border: none;
+}
+
+@media only screen and (max-width: 780px) {
+    form {
+        margin-top: 40px;
+    }
+
+    #banner-img {
+        height: 30vh;
+    }
+
+}
+
+@media only screen and (max-width: 350px) {
+    #banner-img {
+        display: none;
+    }
+}
