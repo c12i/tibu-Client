@@ -12,3 +12,12 @@ button {
     background: #034866;
     border: none;
 }
+#inputs{
+    width: 350px;
+    
+}
+#title{
+    
+    text-decoration: underline;
+    text-align: center;
+}

@@ -1,5 +1,5 @@
 #banner-img{
-    background: url(../assets/microscope.jpg);
+    background: url(../../assets/microscope.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: 75%;
@@ -9,9 +9,7 @@
     display: grid;
     place-items: center;
 }
-#title{
-    border-bottom: 1px solid #000000;
-}
+
 nav {
     background-color: #034866;
 }
