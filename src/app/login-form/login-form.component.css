@@ -1,0 +1,14 @@
+form {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+button {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    background: #034866;
+    border: none;
+}
