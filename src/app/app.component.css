@@ -1,0 +1,11 @@
+#banner-img{
+    /* background-image: url("../../assets/img/microscope.jpg"); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: 75%;
+    height: 94vh;
+}
+#section1{
+    display: grid;
+    place-items: center;
+}
