@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RequestVerificationComponent } from './request-verification/request-verification.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 
 const routes: Routes = [
+  {path: '', component: LoginPageComponent},
   {path: 'verify', component: RequestVerificationComponent}
 ];
 

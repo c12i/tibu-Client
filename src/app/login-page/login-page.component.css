@@ -13,3 +13,27 @@
 nav {
     background-color: #034866;
 }
+
+app-login-form {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 780px) {
+    app-login-form {
+        margin-top: 40px;
+    }
+
+    #banner-img {
+        height: 30vh;
+    }
+
+}
+
+@media only screen and (max-width: 350px) {
+    #banner-img {
+        display: none;
+    }
+}
