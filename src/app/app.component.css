@@ -1,3 +1,8 @@
+login-form {
+    width: 80%;
+    margin-right:  auto;
+    margin-left: auto;
+}
 #banner-img{
     background: url(../assets/microscope.jpg);
     background-size: cover;

@@ -1,8 +1,13 @@
-form {
+login-form{
     width: 80%;
     margin-right: auto;
     margin-left: auto;
 }
+/* form { */
+    /* width: 80%; */
+    /* margin-right: auto; */
+    /* margin-left: auto; */
+/* } */
 
 button {
     display: block;
@@ -17,7 +22,6 @@ button {
     
 }
 #title{
-    
     text-decoration: underline;
     text-align: center;
 }
