@@ -2,11 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RequestVerificationComponent } from './request-verification/request-verification.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { DashNavigationComponent } from './dash-navigation/dash-navigation.component';
 
 
 const routes: Routes = [
   {path: '', component: LoginPageComponent},
-  {path: 'verify', component: RequestVerificationComponent}
+  {path: 'verify', component: RequestVerificationComponent},
+  {path: 'dashboard', component: DashNavigationComponent},
+  
 ];
 
 @NgModule({
