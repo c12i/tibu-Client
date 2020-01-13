@@ -27,11 +27,28 @@
   background-color: #f4f4f4;
 }
 
+#sidenav-toolbar {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.sidenav-logo {
+  height: 48px;
+  width: 48px;
+  margin: 5px 10px 0px 15px;
+}
+
 mat-sidenav a, #sidenav-toolbar {
   color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
 mat-sidenav a:hover{
+  background: rgb(1, 80, 114);
+}
+
+.router-link-active {
   background: rgb(1, 88, 126);
 }
 

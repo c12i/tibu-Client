@@ -7,6 +7,11 @@ nav span, form h4 {
     font-weight: 600;
 }
 
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
 .row {
     margin: 0%; 
 }
