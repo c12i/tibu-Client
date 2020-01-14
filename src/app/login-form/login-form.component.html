@@ -3,8 +3,6 @@
 
 <form #loginForm ="ngForm" (ngSubmit)="onSubmit()" >
   
-  
-  {{ loginForm.value | json}}
   <div class="form-group">
     <label for="usernameInput">Username</label>
     <input ngModel #username="ngModel" required  [(ngModel)]="userModel.username"
@@ -29,12 +27,6 @@
   </div>
   </div>
 
-  <button [disabled]="!loginForm.form.valid" type="submit" class="btn btn-success">Login</button>
+  <button [disabled]="!loginForm.form.valid" type="submit" class="btn btn-primary">Login</button>
 </form>
 </div>
-
-<div>
-  <h2>Model</h2>
-  {{currentUser}}
-</div>
-

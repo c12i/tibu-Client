@@ -5,7 +5,7 @@
 
 .sidenav {
   width: 200px;
-  background-color: #002A3C;
+  background-color: #515884;
   color: white;
 }
 
@@ -45,9 +45,9 @@ mat-sidenav a, #sidenav-toolbar {
 }
 
 mat-sidenav a:hover{
-  background: rgb(1, 80, 114);
+  background: #BB4D56;
 }
 
 .router-link-active {
-  background: rgb(1, 88, 126);
+  background: #BB4D56;
 }

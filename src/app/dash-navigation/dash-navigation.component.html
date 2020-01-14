@@ -9,10 +9,10 @@
     </mat-toolbar>
     <mat-nav-list>
       <a mat-list-item [routerLink]="['home']" routerLinkActive="router-link-active" >
-        • Dashboard
+        Dashboard
       </a>
       <a mat-list-item [routerLink]="['tests']">
-        • Tests
+        Tests
       </a>
     </mat-nav-list>
   </mat-sidenav>
@@ -27,7 +27,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span id="toolbar-spacer"></span>
-      <button mat-raised-button color="accent" class="mr-3">Logout</button>
+      <button mat-raised-button class="mr-3">Logout</button>
     </mat-toolbar>
     <!-- Router outlet goes here after establishing child component paths-->
     <router-outlet></router-outlet>
