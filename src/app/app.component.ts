@@ -8,9 +8,9 @@ import { User } from './user';
 export class AppComponent{
   title = 'mmdfrontend';
   
-  userModel = new User("Andy","Andy1234");
+  userModel = new User("","");
   onSubmit(){
-    console.log("submitted");
+    console.log(this.userModel);
  
   }
 }
