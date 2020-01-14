@@ -1,0 +1,46 @@
+.container-fluid {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.super-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.card {
+    border-radius: 8px;
+    margin: auto 10px auto 10px;
+}
+
+.card-text-col {
+    display: grid; 
+    align-items: center;
+    padding-top: 20px;
+}
+
+.card-icon {
+    margin: 10px auto 10px auto;
+    height: 80px;
+    width: 85px;
+}
+
+.body-section-card {
+    width: 85%;
+}
+
+@media only screen and (max-width: 850px) {
+    .card-image-col {
+        display: none;
+    }
+
+}

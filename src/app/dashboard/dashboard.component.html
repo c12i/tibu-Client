@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <!-- 'Header' Cards Section -->
+    <h3 class="super-title">Dashboard</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="row" style="margin: 0px;">
+                    <div class="col-md-9 text-center card-text-col">
+                        <h5 class="title">Patient's Name</h5>
+                        <p>{{request.patient_name}}</p>
+                    </div>
+                    <div class="col-md-3 card-image-col">
+                        <img src="../../assets/img/patient.png" alt="patient" class="rounded float-right card-icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="row" style="margin: 0px;">
+                    <div class="col-md-9 text-center card-text-col">
+                        <h5 class="title">Doctor's Name</h5>
+                        <p>{{request.doctor_name}}</p>
+                    </div>
+                    <div class="col-md-3 card-image-col">
+                        <img src="../../assets/img/card_doc.png" alt="patient" class="rounded float-right card-icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="row" style="margin: 0px;">
+                    <div class="col-md-9 text-center card-text-col">
+                        <h5 class="title">Specimen Type</h5>
+                        <p>{{request.specimen}}</p>
+                    </div>
+                    <div class="col-md-3 card-image-col">
+                        <img src="../../assets/img/urine.png" alt="patient" class="rounded float-right card-icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 'Body' Section -->
+    <section class="mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="super-title">Patient Information</h3>
+                <div class="card card-body body-section-card" style="min-height: 220px;">
+                    <p><span class="h5 title">Patient's Name: </span>{{request.patient_age}}</p>
+                    <p><span class="h5 title">Patient's Address: </span>{{request.patient_address}}</p>
+                    <h5 class="title">Symptoms</h5>
+                    <ul>
+                        <li *ngFor="let sympt of request.symptoms">{{sympt}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3 class="super-title">Investigations</h3>
+                <div class="card card-body body-section-card" style="min-height: 220px;">
+                    <p>{{request.investigations}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+</div>
