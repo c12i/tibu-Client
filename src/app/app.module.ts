@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MatListModule } from '@angular/material/list';
     LoginFormComponent,
     LoginPageComponent,
     RequestVerificationComponent,
-    DashNavigationComponent
+    DashNavigationComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
