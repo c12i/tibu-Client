@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/user';
 
 @Component({
   selector: 'app-login-form',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginFormComponent implements OnInit {
 
+  userModel = new User("","");
   constructor() { }
 
   ngOnInit() {
+  }
+
+  get currentUser(){
+    return JSON.stringify(this.userModel);
   }
 
 }
