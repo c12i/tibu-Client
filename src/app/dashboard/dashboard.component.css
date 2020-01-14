@@ -7,9 +7,29 @@
 
 .title {
     font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
 
-.card-icons {
-    height: 48px;
-    width: 48px;
+.card {
+    border-radius: 8px;
+    margin: auto 10px auto 10px;
+}
+
+.card-text-area {
+    display: grid; 
+    align-items: center;
+    padding-top: 20px;
+}
+
+.card-icon {
+    margin: 10px auto 10px auto;
+    height: 80px;
+    width: 85px;
+}
+
+@media only screen and (max-width: 830px) {
+    .card-icon {
+        display: none;
+    }
+
 }
