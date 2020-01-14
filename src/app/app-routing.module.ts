@@ -6,10 +6,10 @@ import { DashNavigationComponent } from './dash-navigation/dash-navigation.compo
 
 
 const routes: Routes = [
-  {path: '', component: LoginPageComponent},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: 'login', component: LoginPageComponent},
   {path: 'verify', component: RequestVerificationComponent},
-  {path: 'dashboard', component: DashNavigationComponent},
-  
+  {path: 'dashboard', component: DashNavigationComponent}
 ];
 
 @NgModule({

@@ -3,13 +3,16 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar id="sidenav-toolbar">Tibu</mat-toolbar>
+    <mat-toolbar id="sidenav-toolbar">
+      <img class="sidenav-logo" src="../../assets/img/pharmacy.png" alt="icon">
+      TIBU
+    </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="">
-        Dashboard
+      <a mat-list-item [routerLink]="['home']" routerLinkActive="router-link-active" >
+        • Dashboard
       </a>
-      <a mat-list-item href="">
-        Tests
+      <a mat-list-item [routerLink]="['tests']">
+        • Tests
       </a>
     </mat-nav-list>
   </mat-sidenav>
@@ -27,5 +30,6 @@
       <button mat-raised-button color="accent" class="mr-3">Logout</button>
     </mat-toolbar>
     <!-- Router outlet goes here after establishing child component paths-->
+    <!-- <router-outlet></router-outlet> -->
   </mat-sidenav-content>
 </mat-sidenav-container>
