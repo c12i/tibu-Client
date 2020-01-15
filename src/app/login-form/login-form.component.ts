@@ -14,6 +14,10 @@ export class LoginFormComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit(){
+    
+  }
+
   get currentUser(){
     return JSON.stringify(this.userModel);
   }

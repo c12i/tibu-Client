@@ -6,7 +6,7 @@
   <div class="form-group">
     <label for="usernameInput">Username</label>
     <input ngModel #username="ngModel" required  [(ngModel)]="userModel.username"
-      [class.is-invalid] = "name.invalid && name.touched" type="text" class="form-control" id="usernameInput" name="username" aria-describedby="emailHelp">   
+      [class.is-invalid] = "username.invalid && username.touched" type="text" class="form-control" id="usernameInput" name="username" aria-describedby="emailHelp">   
       <div *ngIf="username.errors && (username.dirty || username.touched)" class="alert alert-danger">
         
         <div [hidden]="!username.errors.required">
@@ -21,7 +21,7 @@
     type="password" [(ngModel)]="userModel.password" class="form-control" id="passwordInput" name="password" required>   
     <div *ngIf="password.errors && (password.dirty || password.touched)" class="alert alert-danger">
         
-        <div [hidden]="!title.errors.required">
+        <div [hidden]="!password.errors.required">
           <small>Kindly enter your password</small>
         </div>
   </div>
