@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-// import { HttpModule }  from '@angular/http' ;
 import { HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +18,7 @@ import {
   MatSidenavModule,MatIconModule,
   MatListModule, MatMenuModule  
 } from '@angular/material';
+import { AuthService } from './auth.service';
 
 
 @NgModule({
@@ -41,10 +41,10 @@ import {
     MatIconModule,
     MatListModule,
     HttpClientModule,
-    FormsModule
-    // HttpModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
