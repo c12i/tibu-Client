@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-request-verification',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestVerificationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router, private authService:AuthService) { }
 
   ngOnInit() {
+  }
+
+  logout(){
+    this.authService.logout();
   }
 
 }

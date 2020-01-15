@@ -18,7 +18,8 @@ import {
   MatSidenavModule,MatIconModule,
   MatListModule, MatMenuModule  
 } from '@angular/material';
-import { AuthService } from './auth.service';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guard/auth.guard';
 
 
 @NgModule({
@@ -44,7 +45,7 @@ import { AuthService } from './auth.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
