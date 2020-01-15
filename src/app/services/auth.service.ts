@@ -44,6 +44,10 @@ export class AuthService {
     return this.currentUser;
   }
 
+  public getToken(){
+    return localStorage.getItem("mmd_token");
+  }
+
   
 
 }
