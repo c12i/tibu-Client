@@ -6,3 +6,12 @@ button {
     background: #515884;
     border: none;
 }
+
+button:disabled {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    background: #515258;
+    border: none;
+}
