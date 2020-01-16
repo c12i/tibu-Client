@@ -8,7 +8,7 @@
       <input ngModel #username="ngModel" required [(ngModel)]="userModel.username"
         [class.is-invalid]="username.invalid && username.touched" type="text" class="form-control" id="usernameInput"
         name="username" aria-describedby="emailHelp">
-      <div *ngIf="username.errors && (username.dirty || username.touched)" class="alert alert-danger">
+      <div *ngIf="username.errors && (username.dirty || username.touched)" class="">
 
         <div [hidden]="!username.errors.required">
           <small>Username can't be empty</small>
@@ -20,7 +20,7 @@
       <label for="passwordInput">Password</label>
       <input ngModel #password="ngModel" type="password" [(ngModel)]="userModel.password" class="form-control"
         id="passwordInput" name="password" required>
-      <div *ngIf="password.errors && (password.dirty || password.touched)" class="alert alert-danger">
+      <div *ngIf="password.errors && (password.dirty || password.touched)" class="">
 
         <div [hidden]="!password.errors.required">
           <small>Kindly enter your password</small>
