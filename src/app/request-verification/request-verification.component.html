@@ -8,10 +8,10 @@
 <div class="container-fill">
     <div class="row">
         <div id="formParentDiv" class="col-md-6">
-            <form id="requestIDForm" action="">
+            <form id="requestIDForm" #requestForm="ngForm" (ngSubmit)="getRequest()">
                 <div class="form-group">
                     <h2 class="text-center">Insert Request ID</h2>
-                    <input id="requestID" class="form-control" type="text">
+                    <input class="form-control" type="text" #requestID name="requestID" [(ngModel)]="reqId">
                 </div>
                 <button type="submit" class="btn btn-primary">Proceed</button>
             </form>

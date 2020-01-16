@@ -14,6 +14,12 @@ export class RequestVerificationComponent implements OnInit {
   ngOnInit() {
   }
 
+  reqId: string;
+
+  getRequest(){
+    this.authService.getRequestDetails(this.reqId);
+  }
+
   logout(){
     this.authService.logout();
   }

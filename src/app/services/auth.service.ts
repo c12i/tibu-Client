@@ -14,9 +14,9 @@ export class AuthService {
   constructor(private http:HttpClient, private route: Router) { 
   }
 
+  
   private reqHeader = {headers: new HttpHeaders()
     .set('Content-Type', 'application/json')}
-
   private currentUser: any;
 
   public login(user: any) {
@@ -46,6 +46,16 @@ export class AuthService {
     return localStorage.getItem("mmd_token");
   }
 
+  /*-------------- Request Verification --------------*/
+  public getRequestDetails(reqId:any){
+  return this.http.get<any>(`${environment.apiUrl+'api/request/'+reqId}`).subscribe(request=>{
+    console.log(request)
+    //this.route.navigate(['login']);
+  },
+  error=>{
+    console.log(error)
+  });
+}
   
 
 }
