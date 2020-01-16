@@ -1,0 +1,30 @@
+nav {
+    background-color: #515884;
+}
+
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+#section1{
+    display: grid;
+    place-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#tb1{
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
+#but1{
+    font-family: 'Poppins', sans-serif;
+    background: #515258;
+    border: none;
+}
+#but2{
+    font-family: 'Poppins', sans-serif;
+    border: none;
+}
