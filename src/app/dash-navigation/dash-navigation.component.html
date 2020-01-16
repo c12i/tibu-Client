@@ -27,7 +27,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span id="toolbar-spacer"></span>
-      <button mat-raised-button class="mr-3">Logout</button>
+      <button mat-raised-button class="mr-3" (click)="logout()">Logout</button>
     </mat-toolbar>
     <!-- Router outlet goes here after establishing child component paths-->
     <router-outlet></router-outlet>

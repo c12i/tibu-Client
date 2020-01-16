@@ -15,9 +15,21 @@ export class RequestVerificationComponent implements OnInit {
   }
 
   reqId: string;
+  invalidReqId: boolean;
 
   getRequest(){
-    this.authService.getRequestDetails(this.reqId);
+    this.authService.fetchRequestDetails(this.reqId).subscribe(request=>{
+      this.invalidReqId = false;
+      this.authService.setDoctor(request)
+      this.authService.setRider(request)
+      this.authService.setSessionStorage(request)
+
+      this.route.navigate(['dashboard']);
+    },
+    error=>{
+      console.log(error)
+      this.invalidReqId = true;
+    });
   }
 
   logout(){

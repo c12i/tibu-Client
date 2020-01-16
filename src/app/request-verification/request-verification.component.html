@@ -14,7 +14,9 @@
                     <input class="form-control" type="text" #requestID name="requestID" [(ngModel)]="reqId">
                 </div>
                 <button type="submit" class="btn btn-primary">Proceed</button>
+                <p *ngIf="invalidReqId" class="text-danger text-center mt-3">Invalid request ID</p>
             </form>
+            
         </div>
 
         <div id="banner-img" class="col-md-6"></div>
