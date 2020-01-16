@@ -10,9 +10,11 @@
         <div id="formParentDiv" class="col-md-6">
             <form id="requestIDForm" #requestForm="ngForm" (ngSubmit)="getRequest()">
                 <div class="form-group">
+
                     <h2 class="text-center">Insert Request ID</h2>
                     <input class="form-control" type="text" #requestID name="requestID" [(ngModel)]="reqId">
                 </div>
+
                 <button type="submit" class="btn btn-primary">Proceed</button>
                 <p *ngIf="invalidReqId" class="text-danger text-center mt-3">Invalid request ID</p>
             </form>
