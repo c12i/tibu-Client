@@ -28,3 +28,6 @@ nav {
     font-family: 'Poppins', sans-serif;
     border: none;
 }
+.modal.show{
+    display: block;
+}

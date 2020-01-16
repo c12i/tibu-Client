@@ -32,7 +32,7 @@
                         
                               <button id="but1" class="btn btn-outline">Accept Request</button>
                               <br>
-                              <button id="but2" class="btn btn-danger">Reject Request</button>
+                              <button data-toggle="modal" (click)="showModal=true" data-target="#myModal" id="but2" class="btn btn-danger">Reject Request</button>
                 </div>
 
                 <div class="col-md-3">
@@ -41,4 +41,29 @@
              </div>
          </div>      
     
+</div>
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog" [ngClass] = "{'show':showModal}">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <h4 class="modal-title">Problem Description</h4>
+        <button type="button" (click)="showModal=false" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+            <label  for="Modal">Problem Description</label>
+            <input type="text" class="form-control validate">
+            
+      </div>
+      <div class="modal-footer">
+        <button type="button" (click)="showModal=false" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
 </div>
