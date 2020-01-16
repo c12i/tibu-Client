@@ -20,17 +20,11 @@ export class AuthService {
   private currentUser: any;
 
   public login(user: any) {
-    return this.http.post<any>(`${environment.apiUrl+'api/auth/'}`,user, this.reqHeader).subscribe(response=>{
-      console.log(response);
-      localStorage.setItem("mmd_token", response.token);
-      this.currentUser = response.user;
-      this.route.navigate(['verify']);
-    });
+    return this.http.post<any>(`${environment.apiUrl+'api/auth/'}`,user, this.reqHeader);
   }
 
   public logout(){
     //Get logout endpoint
-
     this.currentUser = null;
     localStorage.removeItem("mmd_token");
     this.route.navigate(['login']);
@@ -42,6 +36,10 @@ export class AuthService {
 
   public getCurrentUser(){
     return this.currentUser;
+  }
+
+  public setCurrentUser(user:any){
+    this.currentUser = user;
   }
 
   public getToken(){

@@ -15,9 +15,18 @@ export class LoginFormComponent implements OnInit {
   }
 
   userModel = new User("","");
+  wrongCredentials: boolean;
 
   onSubmit(form:NgForm){
-    this.authService.login(this.userModel);
+    this.authService.login(this.userModel).subscribe(response=>{
+      this.wrongCredentials = false;
+      localStorage.setItem("mmd_token", response.token);
+      this.authService.setCurrentUser(response.user);
+      this.route.navigate(['verify']);
+    },
+    err=>{
+      this.wrongCredentials = true;
+    });
   }
 
   constructor(private authService:AuthService, private route:Router) { }
