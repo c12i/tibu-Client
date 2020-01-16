@@ -33,6 +33,7 @@ export class AuthService {
   }
 
 
+  /*-------------- Login/Logout --------------*/
   public login(user: any) {
     return this.http.post<any>(`${environment.apiUrl+'api/auth/'}`,user, this.reqHeader);
   }
@@ -91,6 +92,16 @@ export class AuthService {
     return this.request_rider;
   }
   
+  /*-------------- Request Verification --------------*/
+  public getRequestDetails(reqId:any){
+    return this.http.get<any>(`${environment.apiUrl+'api/request/'+reqId}`).subscribe(request=>{
+      console.log(request)
+      //this.route.navigate(['login']);
+    },
+    error=>{
+      console.log(error)
+    });;
+  }
 
   public setSessionStorage(req: any){
     sessionStorage.setItem("doc_name","Dr. "+req.request_doctor.first_name+" "+req.request_doctor.last_name);
