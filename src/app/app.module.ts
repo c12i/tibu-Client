@@ -19,6 +19,7 @@ import {
   MatSidenavModule,MatIconModule,
   MatListModule, MatMenuModule  
 } from '@angular/material';
+import { TableComponent } from './table/table.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {
     LoginPageComponent,
     RequestVerificationComponent,
     DashNavigationComponent,
-    DashboardComponent
+    DashboardComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
