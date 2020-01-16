@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/user';
+import { NgForm } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -8,18 +11,24 @@ import { User } from 'src/app/user';
 })
 export class LoginFormComponent implements OnInit {
 
-  userModel = new User("","");
-  constructor() { }
-
   ngOnInit() {
   }
 
-  onSubmit(){
-    
+  userModel = new User("","");
+  wrongCredentials: boolean;
+
+  onSubmit(form:NgForm){
+    this.authService.login(this.userModel).subscribe(response=>{
+      this.wrongCredentials = false;
+      localStorage.setItem("mmd_token", response.token);
+      this.authService.setCurrentUser(response.user);
+      this.route.navigate(['verify']);
+    },
+    err=>{
+      this.wrongCredentials = true;
+    });
   }
 
-  get currentUser(){
-    return JSON.stringify(this.userModel);
-  }
+  constructor(private authService:AuthService, private route:Router) { }
 
 }

@@ -1,5 +1,7 @@
 nav {
     background-color: #515884;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
 }
 
 nav span, form h4 {
@@ -7,9 +9,9 @@ nav span, form h4 {
     font-weight: 600;
 }
 
-.navbar-brand {
+.btn-nav {
+    color: white;
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
 }
 
 .row {

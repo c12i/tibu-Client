@@ -5,21 +5,25 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { DashNavigationComponent } from './dash-navigation/dash-navigation.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TableComponent } from './table/table.component';
+import { AuthGuard } from './guard/auth.guard';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginPageComponent},
   {path:'table', component:TableComponent},
   {path: 'verify', component: RequestVerificationComponent},
+  {path: 'verify', component: RequestVerificationComponent, canActivate:[AuthGuard]},
   {
     path: 'dashboard', 
+    canActivate:[AuthGuard],
     component: DashNavigationComponent, 
     children: [
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: 'home', component: DashboardComponent}
     ]
-  }
+  },
+  {path: '', redirectTo: 'login', pathMatch: 'full'}
+
 ];
 
 @NgModule({

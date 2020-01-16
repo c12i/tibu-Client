@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
+import { Patient } from '../class/patient';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,20 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() {}
+  constructor(private authService:AuthService, private route: Router) {
+  }
+
+  req: any;
+  doctor: any;
+
+  request = {
+    patient_name: sessionStorage.getItem("pat_name"),
+    doctor_name: sessionStorage.getItem("doc_name"),
+    specimen: sessionStorage.getItem("pat_specimen"),
+    patient_age: sessionStorage.getItem("pat_age"),
+    patient_address: sessionStorage.getItem("pat_address"),
+    symptoms: ["Vomitting","High Fever","Diarrhoea"],
+    investigations: "Test the sample provided for Malaria"
+  }
 
   ngOnInit() {
   }
-
-  request = {
-    patient_name: "John Doe",
-    doctor_name: "Dr. Jane Dutch",
-    specimen: "Urine",
-    patient_age: 30,
-    patient_address: "Straight Outta Compton",
-    symptoms: ["Arms are weak","Knees are heavy"],
-    investigations: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
-  }
-
 
 }

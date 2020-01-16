@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-// import { HttpModule }  from '@angular/http' ;
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +12,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashNavigationComponent } from './dash-navigation/dash-navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guard/auth.guard';
+import { RequestInterceptorService } from './services/request-interceptor.service';
 import { 
   MatToolbarModule,MatButtonModule,
   MatSidenavModule,MatIconModule,
@@ -43,10 +44,15 @@ import { TableComponent } from './table/table.component';
     MatIconModule,
     MatListModule,
     HttpClientModule,
-    FormsModule
-    // HttpModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard,
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: RequestInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
