@@ -104,7 +104,7 @@ export class AuthService {
   }
 
   public setSessionStorage(req: any){
-    sessionStorage.setItem("doc_name","Dr. "+req.request_doctor.first_name+" "+req.request_doctor.last_name);
+    sessionStorage.setItem("doc_name","Dr. "+req.doctor.first_name+" "+req.doctor.last_name);
     sessionStorage.setItem("pat_name",req.patient_name);
     sessionStorage.setItem("pat_age",req.patient_age);
     //sessionStorage.setItem("pat_mobile",req.patient_mobile);
