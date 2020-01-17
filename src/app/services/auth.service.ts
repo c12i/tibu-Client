@@ -19,9 +19,9 @@ export class AuthService {
   private reqHeader = {headers: new HttpHeaders()
     .set('Content-Type', 'application/json')}
   private currentUser: any;
-  private completeRequest: any;
-  request_doctor: any;
-  request_rider: any;
+  reqObject: any;
+  private request_doctor: any;
+  private request_rider: any;
   /* request_patient = {
     name: "",
     age: "",
@@ -41,7 +41,7 @@ export class AuthService {
   public logout(){
     //Get logout endpoint
     this.currentUser = null;
-    this.completeRequest = null;
+    this.reqObject = null;
     localStorage.removeItem("mmd_token");
     this.clearSessionStorage();
     this.route.navigate(['login']);
@@ -58,6 +58,17 @@ export class AuthService {
     return this.http.get<any>(`${environment.apiUrl+'api/v1/request/'+reqId}`);
   }
 
+  /*-------------- Request Accept --------------*/
+  public returnUpdatedRequest(){
+    //alert(this.reqObject.accepted)
+    this.http.put<any>(`${environment.apiUrl+'api/v1/request/'+this.reqObject.access_code+"/"}`,this.reqObject)
+    .subscribe(request=>{
+      console.log(request)
+      this.route.navigate(['dashboard']);
+    },error=>{
+      console.log(error)
+    });
+  }
 
 /*-------------- Setters & Getters --------------*/
   public getCurrentUser(){
@@ -80,10 +91,14 @@ export class AuthService {
     this.request_rider = reqRider;
   }
 
-  /* public getPatient(){
-    return this.request_patient;
-  } */
+  public setReqObject(requestObj:any){
+    this.reqObject = requestObj;
+  }
 
+  public getReqObject(){
+    return this.reqObject;
+  }
+    
   public getDoctor(){
     return this.request_doctor;
   }
@@ -101,6 +116,7 @@ export class AuthService {
     sessionStorage.setItem("pat_symptoms",req.symptoms);
     sessionStorage.setItem("pat_investigations",req.investigations);
     sessionStorage.setItem("pat_specimen",req.specimen);
+    sessionStorage.setItem("picked_at",req.picked_at);
   }
 
   private clearSessionStorage(){
@@ -112,6 +128,7 @@ export class AuthService {
       sessionStorage.removeItem("pat_symptoms");
       sessionStorage.removeItem("pat_investigations");
       sessionStorage.removeItem("pat_specimen");
+      sessionStorage.removeItem("picked_at");
   }
 
 }

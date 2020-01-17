@@ -2,6 +2,11 @@ nav {
     background-color: #515884;
 }
 
+.btn-nav {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
 .navbar-brand {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;

@@ -10,9 +10,8 @@ import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   {path: 'login', component: LoginPageComponent},
-  {path:'table', component:TableComponent},
-  {path: 'verify', component: RequestVerificationComponent},
   {path: 'verify', component: RequestVerificationComponent, canActivate:[AuthGuard]},
+  {path:'table', component:TableComponent, canActivate:[AuthGuard]},
   {
     path: 'dashboard', 
     canActivate:[AuthGuard],

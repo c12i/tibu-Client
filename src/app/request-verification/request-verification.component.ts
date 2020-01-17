@@ -21,11 +21,17 @@ export class RequestVerificationComponent implements OnInit {
   getRequest(){
     this.authService.fetchRequestDetails(this.reqId).subscribe(request=>{
       this.invalidReqId = false;
-      this.authService.setDoctor(request)
-      this.authService.setRider(request)
-      this.authService.setSessionStorage(request)
+      this.authService.setReqObject(request);
+      this.authService.setDoctor(request);
+      this.authService.setRider(request);
+      this.authService.setSessionStorage(request);
 
-      this.route.navigate(['dashboard']);
+      if(!request.accepted)
+        this.route.navigate(['table']);
+      else 
+        this.route.navigate(['dashboard']);
+
+      
     },
     error=>{
       console.log(error)

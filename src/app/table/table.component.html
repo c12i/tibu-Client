@@ -1,6 +1,9 @@
 <div>
         <nav class="navbar navbar-dark">
                 <span class ="navbar-brand ml-4">TIBU PORTAL</span>
+                <div class="btn-nav">
+                    <a class="btn btn-small navbar-btn" (click)='logout()'>Logout</a>
+                </div>
         </nav>
         <br><br><br><br><br>
 
@@ -15,26 +18,22 @@
                  <div id="section1" class="col-md-6">
                         <table id="tb1" class="table table-borderless"> 
                                 <tbody>
-                                  <tr class="table-active">
-                                    <td>From:</td>
-                                    <td>iHub</td>
-                                  </tr>
                                   <tr class="table-default">
-                                    <td>Time requested:</td>
-                                    <td>8:04</td>
+                                    <td>From:</td>
+                                    <td>{{request.from}}</td>
                                   </tr>
                                   <tr class="table-active">
-                                        <td>Time Arrived:</td>
-                                        <td>8:04</td>
-                                      </tr>
+                                    <td>Time Collected:</td>
+                                    <td>{{request.collected_at}}</td>
+                                  </tr>
                                   <tr class="table-default">
                                     <td>Samples:</td>
-                                    <td>Blood</td>
+                                    <td>{{request.specimen}}</td>
                                   </tr>
                                 </tbody>
                               </table>
                         
-                              <button id="but1" class="btn btn-outline">Accept Request</button>
+                              <button id="but1" class="btn btn-outline" (click)="acceptRequest()">Accept Request</button>
                               <br>
                               <button data-toggle="modal" (click)="showModal=true" data-target="#myModal" id="but2" class="btn btn-danger">Reject Request</button>
                 </div>
