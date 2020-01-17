@@ -22,7 +22,7 @@ export class AuthService {
   private completeRequest: any;
   request_doctor: any;
   request_rider: any;
-  request_patient = {
+  /* request_patient = {
     name: "",
     age: "",
     mobile: "",
@@ -30,12 +30,12 @@ export class AuthService {
     symptoms: "",
     investigations: "",
     specimen: ""
-  }
+  } */
 
 
   /*-------------- Login/Logout --------------*/
   public login(user: any) {
-    return this.http.post<any>(`${environment.apiUrl+'api/auth/'}`,user, this.reqHeader);
+    return this.http.post<any>(`${environment.apiUrl+'api/v1/auth/'}`,user, this.reqHeader);
   }
 
   public logout(){
@@ -55,7 +55,7 @@ export class AuthService {
 
   /*-------------- Request Verification --------------*/
   public fetchRequestDetails(reqId:any){
-    return this.http.get<any>(`${environment.apiUrl+'api/request/'+reqId}`);
+    return this.http.get<any>(`${environment.apiUrl+'api/v1/request/'+reqId}`);
   }
 
 
@@ -80,9 +80,9 @@ export class AuthService {
     this.request_rider = reqRider;
   }
 
-  public getPatient(){
+  /* public getPatient(){
     return this.request_patient;
-  }
+  } */
 
   public getDoctor(){
     return this.request_doctor;
@@ -90,18 +90,7 @@ export class AuthService {
 
   public getRider(){
     return this.request_rider;
-  }
-  
-  /*-------------- Request Verification --------------*/
-  public getRequestDetails(reqId:any){
-    return this.http.get<any>(`${environment.apiUrl+'api/request/'+reqId}`).subscribe(request=>{
-      console.log(request)
-      //this.route.navigate(['login']);
-    },
-    error=>{
-      console.log(error)
-    });;
-  }
+  }  
 
   public setSessionStorage(req: any){
     sessionStorage.setItem("doc_name","Dr. "+req.doctor.first_name+" "+req.doctor.last_name);

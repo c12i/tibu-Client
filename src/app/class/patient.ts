@@ -24,7 +24,9 @@ export class Patient {
         public address: string,
         public symptoms: string,
         public investigations: string,
-        public specimen: string
+        public specimen: string,
+        public timerequested:string,
+        public timearrived:string,
     ){
 
     }
