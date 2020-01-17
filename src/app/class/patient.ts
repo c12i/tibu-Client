@@ -15,6 +15,8 @@ export class Patient {
     //     this.specimen = "";
     // }
 
+    // "created_at": "2020-01-15T04:22:26+03:00",
+    // "picked_at": "2020-01-15T04:23:31+03:00",
     constructor(
         public name: string,
         public age: number,

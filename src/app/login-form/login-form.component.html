@@ -1,14 +1,6 @@
 <div>
   <h2 class="text-center">WELCOME</h2>
 
-<<<<<<< HEAD
-<form #loginForm ="ngForm" (ngSubmit)="onSubmit()">
-  
-  <div class="form-group">
-    <label for="usernameInput">Username</label>
-    <input ngModel #username="ngModel" required  [(ngModel)]="userModel.username"
-      [class.is-invalid] = "username.invalid && username.touched" type="text" class="form-control" id="usernameInput" name="username" aria-describedby="emailHelp">   
-=======
   <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
 
     <div class="form-group">
@@ -16,7 +8,6 @@
       <input ngModel #username="ngModel" required [(ngModel)]="userModel.username"
         [class.is-invalid]="username.invalid && username.touched" type="text" class="form-control" id="usernameInput"
         name="username" aria-describedby="emailHelp">
->>>>>>> af5d962fcfdf1e3fefb927b105a9fe95e284860e
       <div *ngIf="username.errors && (username.dirty || username.touched)" class="alert alert-danger">
 
         <div [hidden]="!username.errors.required">
