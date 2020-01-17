@@ -15,3 +15,15 @@ button:disabled {
     background: #515884;
     border: none;
 }
+
+.form-control.ng-touched.ng-invalid{
+    border: 2px solid red;
+}
+
+div>small{
+    color: red;
+}
+
+:disabled{
+    cursor: not-allowed;
+}
