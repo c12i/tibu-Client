@@ -35,7 +35,7 @@ export class AuthService {
 
   /*-------------- Login/Logout --------------*/
   public login(user: any) {
-    return this.http.post<any>(`${environment.apiUrl+'api/auth/'}`,user, this.reqHeader);
+    return this.http.post<any>(`${environment.apiUrl+'api/v1/auth/'}`,user, this.reqHeader);
   }
 
   public logout(){
@@ -55,7 +55,7 @@ export class AuthService {
 
   /*-------------- Request Verification --------------*/
   public fetchRequestDetails(reqId:any){
-    return this.http.get<any>(`${environment.apiUrl+'api/request/'+reqId}`);
+    return this.http.get<any>(`${environment.apiUrl+'api/v1/request/'+reqId}`);
   }
 
 
@@ -94,7 +94,7 @@ export class AuthService {
   
   /*-------------- Request Verification --------------*/
   public getRequestDetails(reqId:any){
-    return this.http.get<any>(`${environment.apiUrl+'api/request/'+reqId}`).subscribe(request=>{
+    return this.http.get<any>(`${environment.apiUrl+'api/v1/request/'+reqId}`).subscribe(request=>{
       console.log(request)
       //this.route.navigate(['login']);
     },
