@@ -12,6 +12,9 @@ export class TableComponent implements OnInit {
 
   constructor(private route:Router, private authService:AuthService) { }
 
+  rejectInput: string;
+  dateToday = new Date();
+
   request = {
     from: sessionStorage.getItem("pat_name"),
     specimen: this.authService.reqObject.specimen,
@@ -20,11 +23,17 @@ export class TableComponent implements OnInit {
 
   acceptRequest(){
     this.authService.reqObject.accepted = true;
-    this.authService.returnUpdatedRequest();
+    this.authService.returnUpdatedRequest("accept");
   }
 
   logout(){
     this.authService.logout();
+  }
+
+  submit(){
+    this.authService.reqObject.summary = this.rejectInput;
+    this.authService.reqObject.date_complete = this.dateToday;
+    this.authService.returnUpdatedRequest("reject");
   }
 
   ngOnInit() {

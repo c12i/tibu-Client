@@ -59,15 +59,27 @@ export class AuthService {
   }
 
   /*-------------- Request Accept --------------*/
-  public returnUpdatedRequest(){
-    //alert(this.reqObject.accepted)
-    this.http.put<any>(`${environment.apiUrl+'api/v1/request/'+this.reqObject.access_code+"/"}`,this.reqObject)
-    .subscribe(request=>{
-      console.log(request)
-      this.route.navigate(['dashboard']);
-    },error=>{
-      console.log(error)
-    });
+  public returnUpdatedRequest(type:string){
+    //accepted request
+    if(type == "accept"){
+        this.http.put<any>(`${environment.apiUrl+'api/v1/request/'+this.reqObject.access_code+"/"}`,this.reqObject)
+      .subscribe(request=>{
+        this.route.navigate(['dashboard']);
+      },error=>{
+        console.log(error)
+      });
+    }
+
+    //rejected request
+    if(type == "reject"){
+      this.http.put<any>(`${environment.apiUrl+'api/v1/request/'+this.reqObject.access_code+"/"}`,this.reqObject)
+      .subscribe(request=>{
+        this.logout();
+      },error=>{
+        console.log(error)
+      });
+    }
+    
   }
 
 /*-------------- Setters & Getters --------------*/
