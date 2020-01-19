@@ -21,6 +21,8 @@ import {
   MatListModule, MatMenuModule  
 } from '@angular/material';
 import { TableComponent } from './table/table.component';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { TableComponent } from './table/table.component';
     MatListModule,
     HttpClientModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgProgressModule.forRoot(),
+    NgProgressHttpClientModule
   ],
   providers: [AuthService, AuthGuard,
   {
