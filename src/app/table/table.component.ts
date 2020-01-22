@@ -13,6 +13,7 @@ export class TableComponent implements OnInit {
   constructor(private route:Router, private authService:AuthService) { }
 
   rejectInput: string;
+  showModal: boolean;
   dateToday = new Date();
 
   request = {
