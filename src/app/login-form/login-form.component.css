@@ -17,11 +17,11 @@ button:disabled {
 }
 
 .form-control.ng-touched.ng-invalid{
-    border: 2px solid red;
+    border: 2px solid #BB4D56;
 }
 
-div>small{
-    color: red;
+div>small, .text-danger{
+    color: #BB4D56;
 }
 
 :disabled{

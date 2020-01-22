@@ -3,11 +3,12 @@ nav {
 }
 
 #banner-img{
-    background: url(../../assets/img/microscope.jpg);
+    background: url(../../assets/img/doc.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: local;
     background-position-x: 75%;
-    height: 93vh;
+    height: 100vh;
 }
 
 .row {
@@ -36,12 +37,11 @@ app-login-form {
         margin-top: 40px;
     }
     #banner-img {
-        height: 30vh;
+        height: 50vh;
     }
-
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 468px) {
     #banner-img {
         display: none;
     }

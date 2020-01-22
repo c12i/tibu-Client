@@ -18,11 +18,11 @@ nav span, form h4 {
 }
 
 #banner-img {
-    background-image: url("../../assets/img/microscope.jpg");
+    background-image: url("../../assets/img/doc.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: 75%;
-    height: 94vh;
+    height: 100vh;
 }
 
 #formParentDiv {
