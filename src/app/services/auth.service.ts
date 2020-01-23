@@ -57,7 +57,7 @@ export class AuthService {
       .subscribe(request=>{
         this.route.navigate(['dashboard']);
       },error=>{
-        console.log(error)
+        console.log("accept error: "+error)
       });
     }
 
@@ -67,7 +67,7 @@ export class AuthService {
       .subscribe(request=>{
         this.logout();
       },error=>{
-        console.log(error)
+        console.log("reject error: "+error)
       });
     }
     
