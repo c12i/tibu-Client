@@ -6,6 +6,7 @@ import { User } from '../user';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Patient } from '../class/patient';
+import { formatDate } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -51,11 +52,20 @@ export class AuthService {
 
   /*-------------- Request Accept --------------*/
   public returnUpdatedRequest(type:string,reason:string){
+    const formData: FormData = new FormData();
+        formData.append("patient_name",this.reqObject.patient_name);
+        formData.append("patient_age",this.reqObject.patient_age);
+        formData.append("patient_mobile",this.reqObject.patient_mobile);
+        formData.append("patient_address",this.reqObject.patient_address);
+        formData.append("symptoms",this.reqObject.symptoms);
+        formData.append("investigations",this.reqObject.investigations);
+        formData.append("specimen",this.reqObject.specimen);
+
     //accepted request
     if(type == "accept"){
-        this.reqObject.accepted = true;
-        this.http.put<any>(`${environment.apiUrl+'api/v1/request/'+this.reqObject.access_code+"/"}`,this.reqObject)
-      .subscribe(request=>{
+        formData.append("accepted","true");
+        this.http.put<any>(`${environment.apiUrl+'api/v1/request/'+this.reqObject.access_code+"/"}`,formData)
+      .subscribe(res =>{
         this.route.navigate(['dashboard']);
       },error=>{
         console.log("accept error: "+error)
@@ -64,10 +74,11 @@ export class AuthService {
 
     //rejected request
     if(type == "reject"){
-      this.reqObject.summary = reason;
-      this.reqObject.date_complete = new Date();
-      this.http.put<any>(`${environment.apiUrl+'api/v1/request/'+this.reqObject.access_code+"/"}`,this.reqObject)
-      .subscribe(request=>{
+      var today = new Date();
+      formData.append("summary",reason);
+      formData.append("date_complete",today.toISOString());
+      this.http.put<any>(`${environment.apiUrl+'api/v1/request/'+this.reqObject.access_code+"/"}`,formData)
+      .subscribe(res =>{
         this.logout();
       },error=>{
         console.log("reject error: "+error)
