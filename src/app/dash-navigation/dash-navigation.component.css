@@ -4,7 +4,7 @@
 }
 
 .sidenav {
-  width: 200px;
+  min-width: 250px;
   background-color: #515884;
   color: white;
 }
@@ -44,7 +44,11 @@ mat-sidenav a, #sidenav-toolbar {
   font-family: 'Poppins', sans-serif;
 }
 
-mat-sidenav a:hover{
+mat-sidenav a:hover {
+  background: rgb(180, 102, 109);
+}
+
+ mat-sidenav a:focus{
   background: #BB4D56;
 }
 

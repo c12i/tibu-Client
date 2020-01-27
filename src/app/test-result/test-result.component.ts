@@ -24,12 +24,14 @@ export class TestResultComponent implements OnInit {
     }
 
     this.fileupload.uploadFile(this.fileInput,this.summary).subscribe(res=>{
-      console.log(res);
+      alert("Upload Successful");
+
+      this.router.navigate(['dashboard']); //TODO: find a better place to redirect user after submission
     }, error=>{
       console.log("upload error: "+error);
     });
 
-    //form.reset();
+    form.reset();
   }
 
   constructor(private router:Router, private fileupload:FileUploadService) { }
