@@ -50,9 +50,10 @@ export class AuthService {
   }
 
   /*-------------- Request Accept --------------*/
-  public returnUpdatedRequest(type:string){
+  public returnUpdatedRequest(type:string,reason:string){
     //accepted request
     if(type == "accept"){
+        this.reqObject.accepted = true;
         this.http.put<any>(`${environment.apiUrl+'api/v1/request/'+this.reqObject.access_code+"/"}`,this.reqObject)
       .subscribe(request=>{
         this.route.navigate(['dashboard']);
@@ -63,6 +64,8 @@ export class AuthService {
 
     //rejected request
     if(type == "reject"){
+      this.reqObject.summary = reason;
+      this.reqObject.date_complete = new Date();
       this.http.put<any>(`${environment.apiUrl+'api/v1/request/'+this.reqObject.access_code+"/"}`,this.reqObject)
       .subscribe(request=>{
         this.logout();

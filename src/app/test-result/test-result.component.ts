@@ -13,17 +13,18 @@ export class TestResultComponent implements OnInit {
   summary: string;
   fileInput: File = null;
 
-  handleFileInput(files:FileList){
-    this.fileInput = files.item(0);
+  onFileSelected(event){
+    console.log(event);
+    this.fileInput = <File> event.target.files[0];
   }
 
   submitResults(form:NgForm){
     if(this.summary == undefined || this.summary.trim() == ""){
       this.summary = "not inserted";
     }
-    
-    this.fileupload.uploadFile(this.fileInput,this.summary).subscribe(result=>{
-      console.log("success");
+
+    this.fileupload.uploadFile(this.fileInput,this.summary).subscribe(res=>{
+      console.log(res);
     }, error=>{
       console.log("upload error: "+error);
     });
