@@ -1,0 +1,16 @@
+.container-fluid {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+}
+
+button {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    background: #515884;
+    border: none;
+}

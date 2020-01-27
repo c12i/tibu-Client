@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <form id="resultsForm" #resultsForm="ngForm" (ngSubmit)="submitResults(resultsForm)">
+        <div class="form-group">
+            <label for="resultFileInput">Test results file</label>
+            <input type="file" class="form-control-file" id="resultFileInput" #resultFile name="resultFile" (change)="handleFileInput($event.target.files)">
+          </div>
+        <div class="form-group">
+            <label for="summaryArea">Summary</label>
+            <textarea class="form-control" id="summaryArea" #summaryArea name="summaryArea" [(ngModel)]="summary" rows="3" cols="20"></textarea>
+        </div>
+        <button class="btn btn-primary" id="submitBtn" type="submit">Submit</button>
+    </form>
+</div>

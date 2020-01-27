@@ -16,21 +16,12 @@ export class AuthService {
   }
 
   
-  private reqHeader = {headers: new HttpHeaders()
+  reqHeader = {headers: new HttpHeaders()
     .set('Content-Type', 'application/json')}
-  private currentUser: any;
   reqObject: any;
+  private currentUser: any;
   private request_doctor: any;
   private request_rider: any;
-  /* request_patient = {
-    name: "",
-    age: "",
-    mobile: "",
-    address: "",
-    symptoms: "",
-    investigations: "",
-    specimen: ""
-  } */
 
 
   /*-------------- Login/Logout --------------*/
