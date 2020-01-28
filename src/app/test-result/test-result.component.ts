@@ -12,6 +12,7 @@ export class TestResultComponent implements OnInit {
 
   summary: string;
   fileInput: File = null;
+  failed: boolean = false;
 
   onFileSelected(event){
     this.fileInput = <File> event.target.files[0];
@@ -23,9 +24,10 @@ export class TestResultComponent implements OnInit {
     }
 
     this.fileupload.uploadFile(this.fileInput,this.summary).subscribe(res=>{
-      console.log(res.accepted)
+      this.failed = false;
       this.router.navigate(['dashboard']); //TODO: find a better place to redirect user after submission
     }, error=>{
+      this.failed = true;
       console.log("upload error: "+error);
     });
 
