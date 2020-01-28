@@ -23,18 +23,15 @@ export class TableComponent implements OnInit {
   }
 
   acceptRequest(){
-    this.authService.reqObject.accepted = true;
-    this.authService.returnUpdatedRequest("accept");
+    this.authService.returnUpdatedRequest("accept","");
   }
 
   logout(){
     this.authService.logout();
   }
 
-  submit(){
-    this.authService.reqObject.summary = this.rejectInput;
-    this.authService.reqObject.date_complete = this.dateToday;
-    this.authService.returnUpdatedRequest("reject");
+  rejectSubmit(){
+    this.authService.returnUpdatedRequest("reject",this.rejectInput);
   }
 
   ngOnInit() {

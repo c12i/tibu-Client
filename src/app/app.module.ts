@@ -23,6 +23,8 @@ import {
 import { TableComponent } from './table/table.component';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
+import { TestResultComponent } from './test-result/test-result.component';
+import { FileUploadService } from './services/file-upload.service';
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
     RequestVerificationComponent,
     DashNavigationComponent,
     DashboardComponent,
-    TableComponent
+    TableComponent,
+    TestResultComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,7 @@ import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
     NgProgressModule.forRoot(),
     NgProgressHttpClientModule
   ],
-  providers: [AuthService, AuthGuard,
+  providers: [AuthService, FileUploadService, AuthGuard,
   {
     provide: HTTP_INTERCEPTORS,
     useClass: RequestInterceptorService,
