@@ -15,9 +15,9 @@ export class FileUploadService {
 
   uploadFile(resultFile:File, resultSummary:string){
     this.reqObject = this.authservice.getReqObject();
-    var completionDate: Date = new Date();
-    
+
     const formData: FormData = this.authservice.getFormData();
+    formData.set("pdf_summary",resultFile,resultFile.name); //Responsible for file upload
     formData.set("accepted", "true");
     formData.set("status","COMPLETE");
     formData.set("summary",resultSummary);
