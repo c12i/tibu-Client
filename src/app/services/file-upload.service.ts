@@ -8,31 +8,21 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class FileUploadService {
+  
+  constructor(private http:HttpClient, private route: Router, private authservice:AuthService) { }
+
   reqObject: any;
-
-  constructor(private http:HttpClient, private route: Router, private authservice:AuthService) { 
-    
-  }
-
 
   uploadFile(resultFile:File, resultSummary:string){
     this.reqObject = this.authservice.getReqObject();
     var completionDate: Date = new Date();
-    var status: string = "COMPLETE";
     
-    const formData: FormData = new FormData();
-    formData.append("pdf_summary",resultFile,resultFile.name);
-    formData.append("patient_name",this.reqObject.patient_name);
-    formData.append("patient_age",this.reqObject.patient_age);
-    formData.append("patient_mobile",this.reqObject.patient_mobile);
-    formData.append("patient_address",this.reqObject.patient_address);
-    formData.append("symptoms",this.reqObject.symptoms);
-    formData.append("investigations",this.reqObject.investigations);
-    formData.append("specimen",this.reqObject.specimen);
-    formData.append("summary",resultSummary);
-    formData.append("status",status);
-    //formData.append("date_complete",completionDate);
-
+    const formData: FormData = this.authservice.getFormData();
+    formData.set("accepted", "true");
+    formData.set("status","COMPLETE");
+    formData.set("summary",resultSummary);
+    formData.set("date_complete",new Date().toISOString());
+    
     return this.http.put<any>(`${environment.apiUrl+'api/v1/request/'+this.reqObject.access_code+"/"}`,formData);
   }
 

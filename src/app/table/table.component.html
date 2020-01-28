@@ -18,18 +18,19 @@
       <div id="section1" class="col-md-6">
         <table id="tb1" class="table table-borderless">
           <tbody>
-            <tr class="table-default">
+            <tr class="table-active">
               <td>From:</td>
               <td>{{request.from}}</td>
-            </tr>
-            <tr class="table-active">
-              <td>Time Collected:</td>
-              <td>{{request.collected_at | date}}</td>
             </tr>
             <tr class="table-default">
               <td>Samples:</td>
               <td>{{request.specimen}}</td>
             </tr>
+            <tr class="table-active">
+              <td>Time Collected:</td>
+              <td>{{request.collected_at | date}}</td>
+            </tr>
+            
           </tbody>
         </table>
 
